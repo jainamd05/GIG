@@ -1,0 +1,9 @@
+import { createBrowserClient } from '@supabase/ssr'
+
+// Use in Client Components ('use client'). Respects RLS as the logged-in user.
+export function createClient() {
+  return createBrowserClient(
+    process.env.NEXT_PUBLIC_SUPABASE_URL!,
+    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
+  )
+}

@@ -1,0 +1,103 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-display: 'Fraunces', serif;
+  --font-body: 'IBM Plex Sans', sans-serif;
+}
+
+body {
+  background: #F6F4EE;
+  color: #1C2B22;
+  font-family: var(--font-body);
+}
+
+h1, h2, h3, h4 { font-family: var(--font-display); }
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.65rem 1.25rem;
+  border-radius: 4px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: background-color 0.15s ease, border-color 0.15s ease;
+  cursor: pointer;
+}
+.btn:disabled { opacity: 0.6; cursor: not-allowed; }
+.btn-primary { background: #235347; color: #F6F4EE; border: 1px solid #235347; }
+.btn-primary:hover:not(:disabled) { background: #173A31; }
+.btn-ghost { background: transparent; color: #1C2B22; border: 1px solid #DAD5C7; }
+.btn-ghost:hover:not(:disabled) { border-color: #235347; }
+.btn-accent { background: #C98A2C; color: #1C2B22; border: 1px solid #C98A2C; }
+.btn-accent:hover:not(:disabled) { background: #B37822; }
+.btn-sm { padding: 0.4rem 0.85rem; font-size: 0.85rem; }
+
+.card {
+  background: #FFFFFF;
+  border: 1px solid #DAD5C7;
+  border-radius: 6px;
+  padding: 1.75rem;
+}
+
+.field label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #6B7568;
+  margin-bottom: 0.35rem;
+}
+.field input, .field select, .field textarea {
+  width: 100%;
+  border: 1px solid #DAD5C7;
+  border-radius: 4px;
+  padding: 0.6rem 0.75rem;
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  background: #FFFFFF;
+  color: #1C2B22;
+}
+.field input:focus, .field select:focus, .field textarea:focus {
+  outline: 2px solid #235347;
+  outline-offset: 1px;
+}
+
+.eyebrow {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #C98A2C;
+}
+
+.badge {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  padding: 0.2rem 0.55rem;
+  border-radius: 3px;
+}
+.badge-open { background: #EFEAD9; color: #6B7568; }
+.badge-assigned { background: #E4EEE9; color: #235347; }
+.badge-interested { background: #EFEAD9; color: #6B7568; }
+.badge-hired { background: #E4EEE9; color: #235347; }
+.badge-released { background: #F3E4DD; color: #B3432D; }
+
+.job-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem 0;
+  border-bottom: 1px solid #EDEAE0;
+}
+.job-row:last-child { border-bottom: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; animation: none !important; }
+}
